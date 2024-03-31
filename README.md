@@ -24,6 +24,14 @@ To build and run the application you have to:
 Run ```dotnet restore```
 then ```dotnet run```
 
+# API
+
+API Method                      | Body                                                                                                                                                               | Action                                                                             |
+--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+GET /                           |                                                                                                                                                                    | Returns 'MotorControl is running...' message                                       |
+POST /motorcontrol/runseconds   | ```{ "MotorSpeed": <0-100>, "Seconds": <RunSeconds> }```                                                                                                           | Running Motor in given percentage speed for given seconds and then stops           |
+POST /motorcontrol/speed        | ```{ "MotorSpeed": <0-100> }```                                                                                                                                    | Running Motor in given percentage speed and keep running                           |
+
 # Links
 [Build HAT Documentation](https://www.raspberrypi.com/documentation/accessories/build-hat.html)
 [Using Build HAT from .NET](https://github.com/raspberrypi/documentation/blob/develop/documentation/asciidoc/accessories/build-hat/net-brick.adoc)
